@@ -13,13 +13,12 @@ class GamesController < ApplicationController
     serialized_url = open(url).read
     word_found = JSON.parse(serialized_url) 
     delta = Time.now - Time.parse(params[:initial_time])
-    if word_found['found'] && GamesHelper.checkWordInGrid(grid, @word)
+    @contain = GamesHelper.checkWordInGrid(grid, @word)
+    if word_found['found'] && @contain
       @score = (word_found['length'].to_i * 10 - delta).round
     else
       @score = 0
       @erro = word_found['error']
-      @contain = GamesHelper.checkWordInGrid(grid, @word)
     end
-
   end
 end

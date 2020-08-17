@@ -18,6 +18,7 @@ class GamesController < ApplicationController
     else
       @score = 0
       @erro = word_found['error']
+      @contain = GamesHelper.checkWordInGrid(grid, @word)
     end
 
   end

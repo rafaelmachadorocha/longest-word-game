@@ -1,0 +1,26 @@
+// Place all the styles related to the Games controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+@mixin square($width, $height: $width) {
+  width: $width;
+  height: $height;
+ }
+
+ .letter {
+   @include square($width: 50px);
+
+   background-color: lightseagreen;
+   color: white;
+   text-shadow: 1px 1px lightgray;
+   margin: 20px 8px;
+   display: inline-block;
+   line-height: 50px;
+   text-align: center;
+   font-size: 1.5em;
+   box-shadow: 2px 2px 2px lightgrey;
+ }
+
+ .longest-word {
+   margin-top: 40px;
+   font-size: 1.2em;
+ }

@@ -1,0 +1,14 @@
+<h1>Games Score</h1>
+<% if @score == 0 %>
+  <p>Você perdeu!</p>
+  <% if @erro == 'word not found' %>
+    <p>Palavra não encontrada!</p>
+  <% else %>
+    <p>Sua palavra deve usar somente as letras no grid!</p>
+  <% end %>
+  <p>Pontuação: <%= @score %></p>
+<% else %>
+  <p>Parabéns!</p>
+  <p>Pontuação: <%= @score %></p>
+<% end %>
+<%= link_to "Novo jogo!", root_path %>
